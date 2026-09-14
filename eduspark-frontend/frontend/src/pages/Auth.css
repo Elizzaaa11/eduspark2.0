@@ -1,0 +1,303 @@
+/* ── Auth form container ──────────────────────────────── */
+.auth-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ── Header block ─────────────────────────────────────── */
+.auth-form-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.auth-form-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 8px rgba(108,60,225,0.7));
+}
+
+.auth-form-logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.auth-form-title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.auth-form-sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Form ─────────────────────────────────────────────── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Label + link row */
+.auth-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-forgot-link {
+  font-size: 0.8rem;
+  color: var(--primary-light);
+  font-weight: 500;
+  transition: var(--transition);
+  opacity: 0.85;
+}
+
+.auth-forgot-link:hover { opacity: 1; text-decoration: underline; }
+
+/* Phone prefix */
+.phone-prefix {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.phone-input { padding-left: 52px !important; }
+
+/* Two-column layout */
+.auth-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Terms text */
+.auth-terms {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+/* Footer link row */
+.auth-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  padding-top: 4px;
+}
+
+.auth-link {
+  color: var(--primary-light);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.auth-link:hover { color: var(--accent); }
+
+.auth-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.auth-back-link:hover { color: var(--primary-light); }
+
+/* Role hint */
+.auth-role-hint {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  text-align: center;
+}
+
+.auth-role-hint-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.auth-role-hint p {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+/* ── Role selector (register step 1) ──────────────────── */
+.role-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.role-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+  width: 100%;
+}
+
+.role-card:hover {
+  border-color: var(--role-color, var(--primary-light));
+  background: var(--surface-2);
+  transform: translateX(4px);
+}
+
+.role-card--selected {
+  border-color: var(--role-color, var(--primary-light));
+  background: var(--surface-2);
+  box-shadow: 0 0 0 1px var(--role-color, var(--primary-light)),
+              0 4px 20px rgba(108,60,225,0.15);
+}
+
+.role-card-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.role-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.role-card-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.role-card-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.role-card-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--role-color, var(--primary));
+  border-color: var(--role-color, var(--primary));
+  color: #fff;
+  transition: var(--transition);
+}
+
+.role-card:not(.role-card--selected) .role-card-check {
+  background: transparent;
+  border-color: var(--border);
+  color: transparent;
+}
+
+/* Step back row */
+.step-back-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.step-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+
+.step-back-btn:hover { color: var(--primary-light); }
+
+.selected-role-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(108,60,225,0.12);
+  border: 1px solid var(--role-color, var(--primary));
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--role-color, var(--primary-light));
+}
+
+/* ── Forgot password icon ─────────────────────────────── */
+.forgot-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.forgot-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-light);
+  animation: pulse-glow 3s ease infinite;
+}
+
+.forgot-icon--success {
+  color: var(--success);
+  border-color: rgba(16,185,129,0.3);
+  background: rgba(16,185,129,0.08);
+  animation: none;
+  box-shadow: 0 0 30px rgba(16,185,129,0.2);
+}
+
+.forgot-success-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Mobile two-col collapse ──────────────────────────── */
+@media (max-width: 460px) {
+  .auth-two-col { grid-template-columns: 1fr; }
+}
